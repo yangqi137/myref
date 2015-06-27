@@ -1,5 +1,14 @@
 {
-  "name"    : "electronref",
-  "version" : "0.1.0",
-  "main"    : "main.js"
+  "name": "electronref",
+  "version": "0.1.0",
+  "main": "main.js",
+  "dependencies": {
+    "pouchdb": ">=3.6.0",
+    "angular": ">=1.3.0"
+  },
+  "private": true,
+  "devDependencies": {
+    "electron-prebuilt": "^0.28.3",
+    "electron-rebuild": "^0.2.2"
+  }
 }
