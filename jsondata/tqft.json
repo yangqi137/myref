@@ -1,0 +1,30 @@
+{
+  "citekey": "WenSOinfty",
+  "type": "article",
+  "title": "Construction of bosonic symmetry-protected-trivial states and their topological invariants via $G\\times SO(\\infty)$ nonlinear $\\sigma$ models",
+  "author": [{"first": "Xiao-Gang", "last": "Wen"}],
+  "journal": "Phys. Rev. B",
+  "volume": "91",
+  "page": "205101",
+  "year": "2015",
+  "doi": "10.1103/PhysRevB.91.205101",
+  "tags": ["tqft"]
+}
+
+{
+  "citekey": "ChenSTO2015",
+  "type": "article",
+  "title": "Anomalous Symmetry Fractionalization and Surface Topological Order",
+  "author": [
+    {"first": "Xie", "last": "Chen"},
+    {"first": "Fiona J.", "last": "Burnell"},
+    {"first": "Ashvin", "last": "Vishwanath"},
+    {"first": "Lukasz", "last": "Fidkowski"}
+  ],
+  "journal": "Phys. Rev. X",
+  "volume": "5",
+  "page": "041013",
+  "year": "2015",
+  "doi": "10.1103/PhysRevX.5.041013",
+  "tags": ["tqft"]
+}

@@ -1,0 +1,16 @@
+{
+  "name": "webref",
+  "version": "1.0.0",
+  "description": "The website of the myref app.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Yang Qi",
+  "license": "ISC",
+  "dependencies": {
+    "koa": "^1.1.2",
+    "koa-mongo": "^0.4.1",
+    "koa-router": "^5.2.3"
+  }
+}

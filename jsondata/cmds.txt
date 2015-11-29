@@ -1,0 +1,5 @@
+Starting mongod:
+mongod --config /usr/local/etc/mongod.conf
+
+Importing data:
+mongoimport --db myref --collection bibdb --drop --file tqft.json
