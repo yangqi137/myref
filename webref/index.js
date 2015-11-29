@@ -2,12 +2,17 @@ var koa = require('koa');
 var app = koa();
 
 var kmongo = require('koa-mongo');
+var hbs = require('koa-hbs');
 var router = require('koa-router')();
 
 app.use(kmongo({
   host: 'localhost',
   port: 27017,
   db:   'myref'
+}));
+
+app.use(hbs.middleware({
+  viewPath: __dirname + '/templates'
 }));
 
 router.get('/', function *(){
@@ -22,13 +27,30 @@ router.get('/', function *(){
   .find().toArray(function(err, items){
     this.body = items;
   });*/
-  this.body = yield this.mongo.db('myref').collection('bibdb')
-              .find().toArray();
-  this.view_name = 'refs';
+  this.ref_data = yield this.mongo.db('myref').collection('bibdb')
+                   .find().toArray();
+  this.view_name = 'reflist';
   yield next;
 });
 
 app.use(router.routes());
 app.use(router.allowedMethods());
+
+app.use(function *(next){
+  //console.log(this.request.type);
+  switch (this.request.type) {
+  case 'application/json':
+    this.body = this.ref_data;
+    yield next;
+    break;
+  case 'text/html':
+  default:
+    yield this.render(this.view_name, {
+      testmsg: 'hello, world!',
+      refs: this.ref_data
+    });
+    break;
+  }
+});
 
 app.listen(8080);

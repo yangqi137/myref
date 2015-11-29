@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>List of references</title>
+</head>
+<body>
+  <h1>List of references</h1>
+  <p>{{testmsg}}</p>
+  <table>
+    <tr>
+      <th>Authors</th>
+      <th>Title</th>
+      <th>Reference</th>
+      <th>Year</th>
+    </tr>
+    {{#each refs}}
+    <tr>
+      <td>{{#each author}}{{first}} {{last}};{{/each}}</td>
+      <td>{{title}}</td>
+      <td>{{journal}} {{volume}} {{page}}</td>
+      <td>{{year}}</td>
+    </tr>
+    {{/each}}
+  </table>
+</body>
+</html>
