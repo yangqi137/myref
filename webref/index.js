@@ -38,17 +38,19 @@ app.use(router.allowedMethods());
 
 app.use(function *(next){
   //console.log(this.request.type);
-  switch (this.request.type) {
-  case 'application/json':
+  switch (this.request.accepts('html', 'json')) {
+  case 'json':
     this.body = this.ref_data;
     yield next;
     break;
-  case 'text/html':
-  default:
+  case 'html':
     yield this.render(this.view_name, {
       testmsg: 'hello, world!',
       refs: this.ref_data
     });
+    break;
+  default:
+    yield next;
     break;
   }
 });
