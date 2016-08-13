@@ -6,15 +6,19 @@ var db = PouchDB(dbpos);
 var remoteCouch = false;
 
 var refApp = AngularJS.module('refApp', []);
-
-refApp.controller('refNewCtl', ['scope', function($scope) {
-  $scope.add = function(value) {
-    value._id = new Date().toISOString();
-    db.put(todo, function callback(err, result) {
+console.log("hello, world")
+refApp.controller('RefController', function() {
+  var refCtl = this;
+  refCtl.add = function(value) {
+    //value._id;
+    console.log("adding a reference");
+    console.log(value);
+    db.put(value, function callback(err, result) {
       if (!err) console.log('Successfully added a reference');
     });
   };
-}]);
+});
+
 
 function addTodo(text) {
   var todo = {
