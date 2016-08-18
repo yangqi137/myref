@@ -4,13 +4,11 @@
     <title>Hello World!</title>
     <script src="index.js" type="text/javascript"></script>
   </head>
-  <body>
+  <body ng-controller = "RefController as refCtl">
     <h1>My References</h1>
-    <div ng-controller = "RefController as refCtl">
     <div>
-      <ul>
-        <li>Fist reference.</li>
-        <li>Second reference.</li>
+      <ul ng-repeat="ref in refs">
+        <li>{{ref.title}}, {{ref.authors}}, {{ref.journal}} {{ref.volumn}} {{ref.page}} ({{ref.year}}).</li>
       </ul>
     </div>
     <div>
@@ -35,6 +33,5 @@
         <input type="submit" value="Add">
       </form>
     </div>
-  </div>
   </body>
 </html>

@@ -2,25 +2,22 @@
 <html>
 <head>
   <title>List of references</title>
+  <link rel="stylesheet" type="text/css" href="/statics/main.css">
 </head>
 <body>
   <h1>List of references</h1>
-  <p>{{testmsg}}</p>
-  <table>
-    <tr>
-      <th>Authors</th>
-      <th>Title</th>
-      <th>Reference</th>
-      <th>Year</th>
-    </tr>
+  <ul>
     {{#each refs}}
-    <tr>
-      <td>{{#each author}}{{first}} {{last}};{{/each}}</td>
-      <td>{{title}}</td>
-      <td>{{journal}} {{volume}} {{page}}</td>
-      <td>{{year}}</td>
-    </tr>
+    <li><span class='title'>{{title}}</span><br>
+      <span class='author'>{{#each author}}{{first}} {{last}}, {{/each}}</span>
+      <a class='reference' href='http://dx.doi.org/{{doi}}'>
+        <span class='journal'>{{journal}}</span>
+        <span class='volume'>{{volume}}</span>
+        <span class='page'>{{page}}</span>
+      </a>
+      <span class='year'>({{year}})</span>
+    </li>
     {{/each}}
-  </table>
+  </ul>
 </body>
 </html>

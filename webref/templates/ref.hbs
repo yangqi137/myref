@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+{{#with refs.[0]}}
+<html>
+<head>
+  <title>{{title}}</title>
+</head>
+<body>
+  <h1 class="title">{{title}}</h1>
+  <p class="author">Authors: {{#each author}}{{first}} {{last}}{{/each}}</p>
+  {{#if doi}}
+  <p><a class='reference' href='http://dx.doi.org/{{doi}}'>
+    <span class='journal'>{{journal}}</span>
+    <span class='volume'>{{volume}}</span>
+    <span class='page'>{{page}}</span>
+  </a></p>
+  {{/if}}
+  {{#if arxiv}}
+  <p><a class="arxiv" href="http://arxiv.org/abs/{{arxiv}}">
+    arXiv:{{arxiv}}
+  </a></p>
+  {{/if}}
+</body>
+</html>
+{{/with}}

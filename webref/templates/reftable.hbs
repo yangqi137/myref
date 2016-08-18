@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>List of references</title>
+</head>
+<body>
+  <h1>List of references</h1>
+  <table>
+    <tr>
+      <th class='colAuthors'>Authors</th>
+      <th class='colTitle'>Title</th>
+      <th class='colRef'>Reference</th>
+      <th class='colYear'>Year</th>
+    </tr>
+    {{#each refs}}
+    <tr>
+      <td>{{#each author}}{{first}} {{last}}; {{/each}}</td>
+      <td>{{title}}</td>
+      <td>{{journal}} {{volume}} {{page}}</td>
+      <td>{{year}}</td>
+    </tr>
+    {{/each}}
+  </table>
+</body>
+</html>

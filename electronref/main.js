@@ -36,7 +36,13 @@ app.on('window-all-closed', function() {
 
 // This method will be called when Electron has done everything
 // initialization and ready for creating browser windows.
-app.on('ready', createWindow);
+app.on('ready', function() {
+  createWindow();
+  //BrowserWindow.addDevToolsExtension('/Users/yangqi/Library/Application\ Support/Google/Chrome/Default/Extensions/apehfighfmpoieeniallefdeibodgmmb/1.1_0/');
+  //BrowserWindow.addDevToolsExtension('/Users/yangqi/Library/Application\ Support/Google/Chrome/Default/Extensions/hbhhpaojmpfimakffndmpmpndcmonkfa/0.1.2_0/');
+  //BrowserWindow.removeDevToolsExtension('ClearBrowserData');
+  //BrowserWindow.removeDevToolsExtension('PouchDB Inspector');
+});
 
 app.on('activate', function () {
   // On OS X it's common to re-create a window in the app when the

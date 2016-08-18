@@ -7,8 +7,19 @@ var remoteCouch = false;
 
 var refApp = AngularJS.module('refApp', []);
 console.log("hello, world")
-refApp.controller('RefController', function() {
+refApp.controller('RefController', function($scope) {
   var refCtl = this;
+  db.allDocs({include_docs: true, descending: true}).then(function (docs) {
+    $scope.refs = [];
+    docs.rows.forEach(function(row) {
+      $scope.refs.push(row.doc);
+    });
+    $scope.$apply();
+    console.log($scope.refs);
+  }).catch(function (err) {
+    console.log("Failed to get all docs");
+    console.log(err);
+  });
   refCtl.add = function(value) {
     //value._id;
     console.log("adding a reference");
@@ -19,21 +30,6 @@ refApp.controller('RefController', function() {
   };
 });
 
-
-function addTodo(text) {
-  var todo = {
-    _id: new Date().toISOString(),
-    title: text,
-    completed: false
-  };
-  db.put(todo, function callback(err, result) {
-    if (!err) {
-      console.log('Successfully posted a todo!');
-    }
-  });
-}
-
-//addTodo("def");
 db.allDocs({include_docs: true, descending: true}, function(err, doc) {
   doc.rows.forEach(function(todo){
     console.log(todo.doc.title);

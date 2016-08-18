@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Import a new reference</title>
+  <script type="text/javascript" src="/bower/jquery/jquery.min.js"></script>
+  <script type="text/javascript" src="/statics/import.js"></script>
+</head>
+<body>
+  <form action="/refs/" method="post">
+    <label>Type:
+      <select name="type">
+        <option value="journal" selected="true">Journal</option>
+        <option value="arxiv">arXiv</option>
+        <option value="unpublished">Unpublished</option>
+      </select>
+    </label>
+    <br>
+    <label>Title:
+      <input name="title" type="text" required="true" inputmode="latin">
+    </label>
+    <br>
+    <label>Authors:
+      <input name="author" type="text" required="true" inputmode="latin-name">
+    </label>
+    <br>
+    <label>Journal:
+      <input name="journal" type="text" inputmode="latin">
+    </label>
+    <label>Volume:
+      <input name="volume" type="text" inputmode="numeric">
+    </label>
+    <label>Page: <input name="page" type="text" inputmode="numeric"></label>
+    <br>
+    <label>Year: <input name="year" type="text" inputmode="numeric"></label>
+    <br>
+    <label>DOI: <input name="doi" type="text" inputmode="verbatim"></label>
+    <button name="doilookup" type="button">Lookup</button>
+    <br>
+    <label>arXiv: <input name="arxiv" type="text" inputmode="numeric"></label>
+    <button name="arxivlookup" type="button">Lookup</button>
+    <br>
+    <input type="submit"><input type="reset">
+  </form>
+</body>
