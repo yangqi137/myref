@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html ng-app="refApp">
+  <head>
+    <title>Hello World!</title>
+    <script src="newentry.js" type="text/javascript"></script>
+  </head>
+  <body ng-controller = "RefController as refCtl">
+    <h1>New Entry</h1>
+    <div>
+      <form ng-submit="refCtl.add(newref)">
+        <label>Title: </label>
+        <input type="text" ng-model="newref.title">
+        <br>
+        <label>Authors: </label>
+        <input type="text" ng-model="newref.authors">
+        <br>
+        <label>Journal: </label>
+        <input type="text" ng-model="newref.journal">
+        <br>
+        <label>Volumn: </label>
+        <input type="text" ng-model="newref.volumn">
+        <br>
+        <label>Page: </label>
+        <input type="text" ng-model="newref.page">
+        <br>
+        <label>Year: </label>
+        <input type="text" ng-model="newref.year">
+        <br>
+        <label>Citation ID: </label>
+        <input type="text" ng-model="newref._id">
+        <br>
+        <label>DOI: </label>
+        <input type="text" ng-model="newref.doi">
+        <button type="button" ng-click="refCtl.lookUpDOI(newref.doi)">Look up</button>
+        <br>
+        <label>arXiv: </label>
+        <input type="text" ng-model="newref.arxiv">
+        <br>
+        <input type="submit" value="Add">
+      </form>
+    </div>
+  </body>
+</html>
